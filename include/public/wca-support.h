@@ -1,4 +1,4 @@
-// Copyright (c) 2015-2018 LG Electronics, Inc.
+// Copyright (c) 2015-2019 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -145,14 +145,13 @@ typedef struct {
  *        will fail.
  * @param ls_wifi_handle : LS2 handle for com.webos.service.wifi
  * @param ls_cm_handle : LS2 handle for com.webos.service.connectionmanager
- * @param ls_wan_handle : LS2 handle for com.webos.service.wan
  * @param wca_callbacks : Callbacks that provide information about different
  *                        network properties
  * @param callback Callback which is called when the operation is done or
  *                 has failed.
  * @param user_data User data which is handed over when the callback is called.
  */
-int wca_support_init(LSHandle *ls_wifi_handle, LSHandle *ls_cm_handle, LSHandle *ls_wan_handle,
+int wca_support_init(LSHandle *ls_wifi_handle, LSHandle *ls_cm_handle,
 		wca_support_connman_update_callbacks *wca_callbacks,
 		wca_support_callback callback, void *user_data);
 
