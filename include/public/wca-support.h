@@ -161,32 +161,6 @@ int wca_support_init(LSHandle *ls_wifi_handle, LSHandle *ls_cm_handle,
 void wca_support_release(void);
 
 /**
- * @brief Enable WiFi tethering support.
- *
- *        Perform all steps depending on the target platform to enable WiFi tethering.
- *
- * @param callback Callback which is called when the operation is done or
- *                 has failed.
- * @param user_data User data which is handed over when the callback is called.
- * @return 0, if call was successful, negative value indicating the error (see errno.h)
- *         otherwise.
- */
-int wca_support_wifi_enable_tethering(wca_support_callback callback, void *user_data);
-
-/**
- * @brief Disable WiFi tethering support.
- *
- *        Perform all steps depending on the target platform to disable WiFi tethering.
- *
- * @param callback Callback which is called when the operation is done or
- *                 has failed.
- * @param user_data User data which is handed over when the callback is called.
- * @return 0, if call was successful, negative value indicating the error (see errno.h)
- *         otherwise.
- */
-int wca_support_wifi_disable_tethering(wca_support_callback callback, void *user_data);
-
-/**
  * @brief Configure WiFi country code.
  *
  *        Perform all steps depending on the target platform to setup country code
@@ -198,26 +172,6 @@ int wca_support_wifi_disable_tethering(wca_support_callback callback, void *user
  *         otherwise.
  */
 int wca_support_wifi_configure_country_code(wca_support_callback callback, void *user_data);
-
-/**
- * @brief Callback function for wca_support_set_passthrough_params method (defined below)
- */
-typedef void (*wca_support_passthrough_params_callback)(bool success, jvalue_ref ret_params, void *user_data);
-
-/**
- * @brief Set passthrough parameters.
- *
- *        Pass the json object directly from caller to underlying support library for the device
- *
- * @param params Json object which contains relevant information for the library to perform
-                   some action.
- * @param callback Callback which is called when the operation is done or
- *                 has failed.
- * @param user_data User data which is handed over when the callback is called.
- * @return 0, if call was successful, negative value indicating the error (see errno.h)
- *         otherwise.
- */
-int wca_support_wifi_set_passthrough_params(jvalue_ref params, wca_support_passthrough_params_callback callback, void *user_data);
 
 /**
  * @brief Enable wol/wowl status.
