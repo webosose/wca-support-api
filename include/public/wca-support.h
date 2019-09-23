@@ -161,6 +161,32 @@ int wca_support_init(LSHandle *ls_wifi_handle, LSHandle *ls_cm_handle,
 void wca_support_release(void);
 
 /**
+ * @brief Enable WiFi tethering support.
+ *
+ *        Perform all steps depending on the target platform to enable WiFi tethering.
+ *
+ * @param callback Callback which is called when the operation is done or
+ *                 has failed.
+ * @param user_data User data which is handed over when the callback is called.
+ * @return 0, if call was successful, negative value indicating the error (see errno.h)
+ *         otherwise.
+ */
+int wca_support_wifi_enable_tethering(wca_support_callback callback, void *user_data);
+
+/**
+ * @brief Disable WiFi tethering support.
+ *
+ *        Perform all steps depending on the target platform to disable WiFi tethering.
+ *
+ * @param callback Callback which is called when the operation is done or
+ *                 has failed.
+ * @param user_data User data which is handed over when the callback is called.
+ * @return 0, if call was successful, negative value indicating the error (see errno.h)
+ *         otherwise.
+ */
+int wca_support_wifi_disable_tethering(wca_support_callback callback, void *user_data);
+
+/**
  * @brief Configure WiFi country code.
  *
  *        Perform all steps depending on the target platform to setup country code
